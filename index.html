@@ -340,7 +340,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/16/angulard的生命周期钩子/" class="post-title-link" itemprop="url">angulard的生命周期钩子</a>
+                <a href="/2019/05/16/angulard的生命周期钩子/" class="post-title-link" itemprop="url">angular的生命周期钩子</a>
               
             
           </h1>
@@ -365,7 +365,7 @@
                 
               
 
-              <time title="Created: 2019-05-16 11:09:21 / Modified: 11:30:31" itemprop="dateCreated datePublished" datetime="2019-05-16T11:09:21+08:00">2019-05-16</time>
+              <time title="Created: 2019-05-16 11:09:21 / Modified: 16:51:14" itemprop="dateCreated datePublished" datetime="2019-05-16T11:09:21+08:00">2019-05-16</time>
             
 
             
@@ -424,7 +424,8 @@
       
         
           
-            <h1 id="angular的生命周期钩子-hooks"><a href="#angular的生命周期钩子-hooks" class="headerlink" title="angular的生命周期钩子(hooks)"></a>angular的生命周期钩子(hooks)</h1><h2 id="什么是生命周期钩子"><a href="#什么是生命周期钩子" class="headerlink" title="什么是生命周期钩子"></a>什么是生命周期钩子</h2><p>简单点来说生命周期钩子就是Angular中一个组件从被创建当销毁期间的一些有意义的关键时刻.<br>这些关键时刻在Angular中被Angular核心模块 @angular/core 暴露出来,<br>从而赋予了我们在它们发生时采取行动的能力</p>
+            <h1 id="angular的生命周期钩子-hooks"><a href="#angular的生命周期钩子-hooks" class="headerlink" title="angular的生命周期钩子(hooks)"></a>angular的生命周期钩子(hooks)</h1><p>因为种种原因公司在angular 1.x的版本上面连续地做了几个项目，因为这个版本有很多的不足的地方，包括后期的维护很复杂，所以后面的项目大佬们在<br>考虑用其它的框架平台，考虑到延续性和集团审批方面的因素，非常有可能使用angular的最新版本，当然angular不完全是版本的迭代以及向前兼容，<br>angular 2.x 以上的版本采用的是typescript的语法，整个的核心概念已经完全不一样了，完全是另外一门语言需要重新学习，<br>接下来关于angular的博文主要是记录我的学习过程里面遇到的一些有趣的知识点来和大家分享。</p>
+<h2 id="什么是生命周期钩子"><a href="#什么是生命周期钩子" class="headerlink" title="什么是生命周期钩子"></a>什么是生命周期钩子</h2><p>简单点来说生命周期钩子就是Angular中一个组件从被创建当销毁期间的一些有意义的关键时刻.<br>这些关键时刻在Angular中被Angular核心模块 @angular/core 暴露出来,<br>从而赋予了我们在它们发生时采取行动的能力</p>
 <p>指令和组件的实例有一个生命周期：新建、更新和销毁。</p>
 <p>每个接口都有唯一的一个钩子方法，它们的名字是由接口名加上 ng前缀构成的。比如，OnInit接口的钩子方法叫做ngOnInit</p>
 <h2 id="生命周期顺序简写"><a href="#生命周期顺序简写" class="headerlink" title="生命周期顺序简写"></a>生命周期顺序简写</h2><p>在Angular通过构造函数创建组件/指令时，它调用这些生命周期钩子方法的顺序是：</p>
