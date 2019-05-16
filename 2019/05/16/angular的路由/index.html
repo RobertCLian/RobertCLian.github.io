@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="angular的路由angular的路由并不是包含在core里面的，而是在它自己的 @angular/router 包中。 像其它 Angular 包一样，你可以从它导入所需的一切所以在ng new  的时候会询问是否配置路由。  src/app/app.module.ts (import)1import &amp;#123; RouterModule, Routes &amp;#125; from &amp;apos;">
+  <meta name="description" content="angular的路由本文主要摘抄了关于路由部分的主要知识点，大家可以结合angular官方的例子来理解路由具体是怎么工作的。 angular的路由并不是包含在core里面的，而是在它自己的 @angular/router 包中。 像其它 Angular 包一样，你可以从它导入所需的一切所以在ng new  的时候会询问是否配置路由。  src/app/app.module.ts (import)1">
 <meta name="keywords" content="angular">
 <meta property="og:type" content="article">
 <meta property="og:title" content="angular的路由">
 <meta property="og:url" content="http://yoursite.com/2019/05/16/angular的路由/index.html">
 <meta property="og:site_name" content="前端 | 深圳史蒂芬库里">
-<meta property="og:description" content="angular的路由angular的路由并不是包含在core里面的，而是在它自己的 @angular/router 包中。 像其它 Angular 包一样，你可以从它导入所需的一切所以在ng new  的时候会询问是否配置路由。  src/app/app.module.ts (import)1import &amp;#123; RouterModule, Routes &amp;#125; from &amp;apos;">
+<meta property="og:description" content="angular的路由本文主要摘抄了关于路由部分的主要知识点，大家可以结合angular官方的例子来理解路由具体是怎么工作的。 angular的路由并不是包含在core里面的，而是在它自己的 @angular/router 包中。 像其它 Angular 包一样，你可以从它导入所需的一切所以在ng new  的时候会询问是否配置路由。  src/app/app.module.ts (import)1">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-16T09:18:46.201Z">
+<meta property="og:updated_time" content="2019-05-16T09:34:49.076Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="angular的路由">
-<meta name="twitter:description" content="angular的路由angular的路由并不是包含在core里面的，而是在它自己的 @angular/router 包中。 像其它 Angular 包一样，你可以从它导入所需的一切所以在ng new  的时候会询问是否配置路由。  src/app/app.module.ts (import)1import &amp;#123; RouterModule, Routes &amp;#125; from &amp;apos;">
+<meta name="twitter:description" content="angular的路由本文主要摘抄了关于路由部分的主要知识点，大家可以结合angular官方的例子来理解路由具体是怎么工作的。 angular的路由并不是包含在core里面的，而是在它自己的 @angular/router 包中。 像其它 Angular 包一样，你可以从它导入所需的一切所以在ng new  的时候会询问是否配置路由。  src/app/app.module.ts (import)1">
 
 
 
@@ -367,7 +367,7 @@
                 
               
 
-              <time title="Created: 2019-05-16 17:07:24 / Modified: 17:18:46" itemprop="dateCreated datePublished" datetime="2019-05-16T17:07:24+08:00">2019-05-16</time>
+              <time title="Created: 2019-05-16 17:07:24 / Modified: 17:34:49" itemprop="dateCreated datePublished" datetime="2019-05-16T17:07:24+08:00">2019-05-16</time>
             
 
             
@@ -424,13 +424,17 @@
       
 
       
-        <h1 id="angular的路由"><a href="#angular的路由" class="headerlink" title="angular的路由"></a>angular的路由</h1><p>angular的路由并不是包含在core里面的，而是在它自己的 @angular/router 包中。 像其它 Angular 包一样，你可以从它导入所需的一切<br>所以在ng new <myapp> 的时候会询问是否配置路由。</myapp></p>
+        <h1 id="angular的路由"><a href="#angular的路由" class="headerlink" title="angular的路由"></a>angular的路由</h1><p>本文主要摘抄了关于路由部分的主要知识点，大家可以结合angular官方的例子来理解路由具体是怎么工作的。</p>
+<p>angular的路由并不是包含在core里面的，而是在它自己的 @angular/router 包中。 像其它 Angular 包一样，你可以从它导入所需的一切<br>所以在ng new <myapp> 的时候会询问是否配置路由。</myapp></p>
 <ul>
 <li>src/app/app.module.ts (import)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#123; RouterModule, Routes &#125; from &apos;@angular/router&apos;;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>路由器需要先配置才会有路由信息。 下面的例子创建了五个路由定义，并用 RouterModule.forRoot 方法来配置路由器， 并把它的返回值添加到 AppModule 的 imports 数组中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">const appRoutes: Routes = [</span><br><span class="line">  &#123; path: &apos;crisis-center&apos;, component: CrisisListComponent &#125;,</span><br><span class="line">  &#123; path: &apos;hero/:id&apos;,      component: HeroDetailComponent &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: &apos;heroes&apos;,</span><br><span class="line">    component: HeroListComponent,</span><br><span class="line">    data: &#123; title: &apos;Heroes List&apos; &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123; path: &apos;&apos;,</span><br><span class="line">    redirectTo: &apos;/heroes&apos;,</span><br><span class="line">    pathMatch: &apos;full&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123; path: &apos;**&apos;, component: PageNotFoundComponent &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  imports: [</span><br><span class="line">    RouterModule.forRoot(</span><br><span class="line">      appRoutes,</span><br><span class="line">      &#123; enableTracing: true &#125; // &lt;-- debugging purposes only</span><br><span class="line">    )</span><br><span class="line">    // other imports here</span><br><span class="line">  ],</span><br><span class="line">  ...</span><br><span class="line">&#125;)</span><br><span class="line">export class AppModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>src/app/app.module.ts (excerpt)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">const appRoutes: Routes = [</span><br><span class="line">  &#123; path: &apos;crisis-center&apos;, component: CrisisListComponent &#125;,</span><br><span class="line">  &#123; path: &apos;hero/:id&apos;,      component: HeroDetailComponent &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: &apos;heroes&apos;,</span><br><span class="line">    component: HeroListComponent,</span><br><span class="line">    data: &#123; title: &apos;Heroes List&apos; &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123; path: &apos;&apos;,</span><br><span class="line">    redirectTo: &apos;/heroes&apos;,</span><br><span class="line">    pathMatch: &apos;full&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123; path: &apos;**&apos;, component: PageNotFoundComponent &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  imports: [</span><br><span class="line">    RouterModule.forRoot(</span><br><span class="line">      appRoutes,</span><br><span class="line">      &#123; enableTracing: true &#125; // &lt;-- debugging purposes only</span><br><span class="line">    )</span><br><span class="line">    // other imports here</span><br><span class="line">  ],</span><br><span class="line">  ...</span><br><span class="line">&#125;)</span><br><span class="line">export class AppModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <p>这里的路由数组 appRoutes 描述如何进行导航。 把它传给 RouterModule.forRoot 方法并传给本模块的 imports 数组就可以配置路由器。</p>
 <p>每个 Route 都会把一个 URL 的 path 映射到一个组件。 注意，path 不能以斜杠（/）开头。 路由器会为解析和构建最终的 URL，这样当你在应用的多个视图之间导航时，可以任意使用相对路径和绝对路径。</p>
 <p>第二个路由中的 :id 是一个路由参数的令牌(Token)。比如 /hero/42 这个 URL 中，“42”就是 id 参数的值。 此 URL 对应的 HeroDetailComponent 组件将据此查找和展现 id 为 42 的英雄。 在本章中稍后的部分，你将会学习关于路由参数的更多知识。</p>
@@ -453,6 +457,8 @@
 <p>路由链接的激活状态会向下级联到路由树中的每个层级，所以，父子路由链接可能会同时激活。要覆盖这种行为，可以把 [routerLinkActiveOptions] 绑定为 { exact: true } 表达式，这样 RouterLink 只有当 URL 与当前 URL 精确匹配时才会激活。</p>
 <h1 id="路由器状态"><a href="#路由器状态" class="headerlink" title="路由器状态"></a>路由器状态</h1><p>在导航时的每个生命周期成功完成时，路由器会构建出一个 ActivatedRoute 组成的树，它表示路由器的当前状态。 你可以在应用中的任何地方用 Router 服务及其 routerState 属性来访问当前的 RouterState 值。</p>
 <p>RouterState 中的每个 ActivatedRoute 都提供了从任意激活路由开始向上或向下遍历路由树的一种方式，以获得关于父、子、兄弟路由的信息。</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>angular的官方文档对路由讲的比较详细，可以参考<br><a href="https://www.angular.cn/guide/router" target="_blank" rel="noopener">https://www.angular.cn/guide/router</a></p>
+<p>简书上也有朋友通过阅读官方demo的代码反向来理解的<br><a href="https://www.jianshu.com/p/e84594f3b935" target="_blank" rel="noopener">https://www.jianshu.com/p/e84594f3b935</a></p>
 
       
     </div>
@@ -650,7 +656,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#angular的路由"><span class="nav-number">1.</span> <span class="nav-text">angular的路由</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由出口"><span class="nav-number">3.</span> <span class="nav-text">路由出口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由器链接"><span class="nav-number">4.</span> <span class="nav-text">路由器链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由链接的激活状态"><span class="nav-number">5.</span> <span class="nav-text">路由链接的激活状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由器状态"><span class="nav-number">6.</span> <span class="nav-text">路由器状态</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#angular的路由"><span class="nav-number">1.</span> <span class="nav-text">angular的路由</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由出口"><span class="nav-number">3.</span> <span class="nav-text">路由出口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由器链接"><span class="nav-number">4.</span> <span class="nav-text">路由器链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由链接的激活状态"><span class="nav-number">5.</span> <span class="nav-text">路由链接的激活状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由器状态"><span class="nav-number">6.</span> <span class="nav-text">路由器状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">7.</span> <span class="nav-text">后记</span></a></li></ol></div>
             
 
           </div>
