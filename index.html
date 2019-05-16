@@ -320,6 +320,184 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/angulard的生命周期钩子/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="超哥">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端 | 深圳史蒂芬库里">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/16/angulard的生命周期钩子/" class="post-title-link" itemprop="url">angulard的生命周期钩子</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-16 11:09:21 / Modified: 11:30:31" itemprop="dateCreated datePublished" datetime="2019-05-16T11:09:21+08:00">2019-05-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/web前端/" itemprop="url" rel="index"><span itemprop="name">web前端</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="angular的生命周期钩子-hooks"><a href="#angular的生命周期钩子-hooks" class="headerlink" title="angular的生命周期钩子(hooks)"></a>angular的生命周期钩子(hooks)</h1><h2 id="什么是生命周期钩子"><a href="#什么是生命周期钩子" class="headerlink" title="什么是生命周期钩子"></a>什么是生命周期钩子</h2><p>简单点来说生命周期钩子就是Angular中一个组件从被创建当销毁期间的一些有意义的关键时刻.<br>这些关键时刻在Angular中被Angular核心模块 @angular/core 暴露出来,<br>从而赋予了我们在它们发生时采取行动的能力</p>
+<p>指令和组件的实例有一个生命周期：新建、更新和销毁。</p>
+<p>每个接口都有唯一的一个钩子方法，它们的名字是由接口名加上 ng前缀构成的。比如，OnInit接口的钩子方法叫做ngOnInit</p>
+<h2 id="生命周期顺序简写"><a href="#生命周期顺序简写" class="headerlink" title="生命周期顺序简写"></a>生命周期顺序简写</h2><p>在Angular通过构造函数创建组件/指令时，它调用这些生命周期钩子方法的顺序是：</p>
+<ul>
+<li>ngOnChanges：在ngOnInit之前，当数据绑定输入属性的值发生变化时。</li>
+<li>ngOnInit：在第一次ngOnChanges之后。</li>
+<li>ngDoCheck：每次Angular变化检测时。</li>
+<li>ngAfterContentInit：在外部内容放到组件内之后。</li>
+<li>ngAfterContentChecked：在放到组件内的外部内容每次检查之后。</li>
+<li>ngAfterViewInit：在初始化组件视图和子视图之后。</li>
+<li>ngAfterViewChecked：在妹子组件视图和子视图检查之后。</li>
+<li>ngOnDestroy：在Angular销毁组件/指令之前。</li>
+</ul>
+<p>除此之外，一些组件还提供了自己的生命周期钩子。例如router有routerOnActivate</p>
+<h2 id="组件的生命周期"><a href="#组件的生命周期" class="headerlink" title="组件的生命周期"></a>组件的生命周期</h2><p>如下图：红色部分钩子angular只会触发一次，而绿色钩子会触发多次。<br>一般情况下，如果要实现check钩子，代码一定要非常简洁，和非常轻量级，不然，分分钟内存泄露。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/6630265-f869d0ab88b4c59c.png" alt></p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>一些有用的链接：<br><a href="https://angular.cn/guide/lifecycle-hooks" target="_blank" rel="noopener">https://angular.cn/guide/lifecycle-hooks</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/15/ft1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1100,7 +1278,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1144,7 +1322,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

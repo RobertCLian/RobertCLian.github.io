@@ -96,18 +96,20 @@
 
 
 
-  <meta name="description" content="我主要参考了简书里面的一片文章成功的搭建了自己的博客。 分享链接如下：https://www.jianshu.com/p/237691a6f1cd 搭建好博客以后发布博文方法如下：https://www.jianshu.com/p/a35e05d0d55d 更换博客主题https://segmentfault.com/a/1190000012805627 以及一些其他有用的链接https://bl">
-<meta name="keywords" content="hexo,博客">
+  <meta name="description" content="angular的生命周期钩子(hooks)什么是生命周期钩子简单点来说生命周期钩子就是Angular中一个组件从被创建当销毁期间的一些有意义的关键时刻.这些关键时刻在Angular中被Angular核心模块 @angular/core 暴露出来,从而赋予了我们在它们发生时采取行动的能力 指令和组件的实例有一个生命周期：新建、更新和销毁。 每个接口都有唯一的一个钩子方法，它们的名字是由接口名加上 n">
+<meta name="keywords" content="angular">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何利用hexo以及github homepage来搭建自己的博客">
-<meta property="og:url" content="http://yoursite.com/2019/05/14/testBlog/index.html">
+<meta property="og:title" content="angulard的生命周期钩子">
+<meta property="og:url" content="http://yoursite.com/2019/05/16/angulard的生命周期钩子/index.html">
 <meta property="og:site_name" content="前端 | 深圳史蒂芬库里">
-<meta property="og:description" content="我主要参考了简书里面的一片文章成功的搭建了自己的博客。 分享链接如下：https://www.jianshu.com/p/237691a6f1cd 搭建好博客以后发布博文方法如下：https://www.jianshu.com/p/a35e05d0d55d 更换博客主题https://segmentfault.com/a/1190000012805627 以及一些其他有用的链接https://bl">
+<meta property="og:description" content="angular的生命周期钩子(hooks)什么是生命周期钩子简单点来说生命周期钩子就是Angular中一个组件从被创建当销毁期间的一些有意义的关键时刻.这些关键时刻在Angular中被Angular核心模块 @angular/core 暴露出来,从而赋予了我们在它们发生时采取行动的能力 指令和组件的实例有一个生命周期：新建、更新和销毁。 每个接口都有唯一的一个钩子方法，它们的名字是由接口名加上 n">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-15T02:54:33.079Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/6630265-f869d0ab88b4c59c.png">
+<meta property="og:updated_time" content="2019-05-16T03:30:31.355Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何利用hexo以及github homepage来搭建自己的博客">
-<meta name="twitter:description" content="我主要参考了简书里面的一片文章成功的搭建了自己的博客。 分享链接如下：https://www.jianshu.com/p/237691a6f1cd 搭建好博客以后发布博文方法如下：https://www.jianshu.com/p/a35e05d0d55d 更换博客主题https://segmentfault.com/a/1190000012805627 以及一些其他有用的链接https://bl">
+<meta name="twitter:title" content="angulard的生命周期钩子">
+<meta name="twitter:description" content="angular的生命周期钩子(hooks)什么是生命周期钩子简单点来说生命周期钩子就是Angular中一个组件从被创建当销毁期间的一些有意义的关键时刻.这些关键时刻在Angular中被Angular核心模块 @angular/core 暴露出来,从而赋予了我们在它们发生时采取行动的能力 指令和组件的实例有一个生命周期：新建、更新和销毁。 每个接口都有唯一的一个钩子方法，它们的名字是由接口名加上 n">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/6630265-f869d0ab88b4c59c.png">
 
 
 
@@ -115,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/14/testBlog/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/16/angulard的生命周期钩子/">
 
 
 
@@ -125,7 +127,7 @@
   };
 </script>
 
-  <title>如何利用hexo以及github homepage来搭建自己的博客 | 前端 | 深圳史蒂芬库里</title>
+  <title>angulard的生命周期钩子 | 前端 | 深圳史蒂芬库里</title>
   
 
 
@@ -324,7 +326,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/14/testBlog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/angulard的生命周期钩子/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="超哥">
@@ -341,7 +343,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">如何利用hexo以及github homepage来搭建自己的博客
+          <h1 class="post-title" itemprop="name headline">angulard的生命周期钩子
 
               
             
@@ -367,24 +369,12 @@
                 
               
 
-              <time title="Created: 2019-05-14 14:48:26" itemprop="dateCreated datePublished" datetime="2019-05-14T14:48:26+08:00">2019-05-14</time>
+              <time title="Created: 2019-05-16 11:09:21 / Modified: 11:30:31" itemprop="dateCreated datePublished" datetime="2019-05-16T11:09:21+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-05-15 10:54:33" itemprop="dateModified" datetime="2019-05-15T10:54:33+08:00">2019-05-15</time>
               
             
           </span>
@@ -436,11 +426,24 @@
       
 
       
-        <p>我主要参考了简书里面的一片文章成功的搭建了自己的博客。</p>
-<p>分享链接如下：<br><a href="https://www.jianshu.com/p/237691a6f1cd" target="_blank" rel="noopener">https://www.jianshu.com/p/237691a6f1cd</a></p>
-<p>搭建好博客以后发布博文方法如下：<br><a href="https://www.jianshu.com/p/a35e05d0d55d" target="_blank" rel="noopener">https://www.jianshu.com/p/a35e05d0d55d</a></p>
-<p>更换博客主题<br><a href="https://segmentfault.com/a/1190000012805627" target="_blank" rel="noopener">https://segmentfault.com/a/1190000012805627</a></p>
-<p>以及一些其他有用的链接<br><a href="https://blog.csdn.net/science_Lee/article/details/84633237" target="_blank" rel="noopener">https://blog.csdn.net/science_Lee/article/details/84633237</a><br><a href="https://www.jianshu.com/p/3a05351a37dc" target="_blank" rel="noopener">https://www.jianshu.com/p/3a05351a37dc</a></p>
+        <h1 id="angular的生命周期钩子-hooks"><a href="#angular的生命周期钩子-hooks" class="headerlink" title="angular的生命周期钩子(hooks)"></a>angular的生命周期钩子(hooks)</h1><h2 id="什么是生命周期钩子"><a href="#什么是生命周期钩子" class="headerlink" title="什么是生命周期钩子"></a>什么是生命周期钩子</h2><p>简单点来说生命周期钩子就是Angular中一个组件从被创建当销毁期间的一些有意义的关键时刻.<br>这些关键时刻在Angular中被Angular核心模块 @angular/core 暴露出来,<br>从而赋予了我们在它们发生时采取行动的能力</p>
+<p>指令和组件的实例有一个生命周期：新建、更新和销毁。</p>
+<p>每个接口都有唯一的一个钩子方法，它们的名字是由接口名加上 ng前缀构成的。比如，OnInit接口的钩子方法叫做ngOnInit</p>
+<h2 id="生命周期顺序简写"><a href="#生命周期顺序简写" class="headerlink" title="生命周期顺序简写"></a>生命周期顺序简写</h2><p>在Angular通过构造函数创建组件/指令时，它调用这些生命周期钩子方法的顺序是：</p>
+<ul>
+<li>ngOnChanges：在ngOnInit之前，当数据绑定输入属性的值发生变化时。</li>
+<li>ngOnInit：在第一次ngOnChanges之后。</li>
+<li>ngDoCheck：每次Angular变化检测时。</li>
+<li>ngAfterContentInit：在外部内容放到组件内之后。</li>
+<li>ngAfterContentChecked：在放到组件内的外部内容每次检查之后。</li>
+<li>ngAfterViewInit：在初始化组件视图和子视图之后。</li>
+<li>ngAfterViewChecked：在妹子组件视图和子视图检查之后。</li>
+<li>ngOnDestroy：在Angular销毁组件/指令之前。</li>
+</ul>
+<p>除此之外，一些组件还提供了自己的生命周期钩子。例如router有routerOnActivate</p>
+<h2 id="组件的生命周期"><a href="#组件的生命周期" class="headerlink" title="组件的生命周期"></a>组件的生命周期</h2><p>如下图：红色部分钩子angular只会触发一次，而绿色钩子会触发多次。<br>一般情况下，如果要实现check钩子，代码一定要非常简洁，和非常轻量级，不然，分分钟内存泄露。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/6630265-f869d0ab88b4c59c.png" alt></p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>一些有用的链接：<br><a href="https://angular.cn/guide/lifecycle-hooks" target="_blank" rel="noopener">https://angular.cn/guide/lifecycle-hooks</a></p>
 
       
     </div>
@@ -464,9 +467,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
-            <a href="/tags/博客/" rel="tag"># 博客</a>
+            <a href="/tags/angular/" rel="tag"># angular</a>
           
         </div>
       
@@ -479,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/14/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/05/15/ft1/" rel="next" title="大学申请书选登：修理管道教给我的事">
+                <i class="fa fa-chevron-left"></i> 大学申请书选登：修理管道教给我的事
               </a>
             
           </div>
@@ -488,10 +489,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/15/markdown/" rel="prev" title="markdown">
-                markdown <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -535,8 +532,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -624,6 +630,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#angular的生命周期钩子-hooks"><span class="nav-number">1.</span> <span class="nav-text">angular的生命周期钩子(hooks)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是生命周期钩子"><span class="nav-number">1.1.</span> <span class="nav-text">什么是生命周期钩子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期顺序简写"><span class="nav-number">1.2.</span> <span class="nav-text">生命周期顺序简写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件的生命周期"><span class="nav-number">1.3.</span> <span class="nav-text">组件的生命周期</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">2.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
