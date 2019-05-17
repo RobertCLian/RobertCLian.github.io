@@ -365,7 +365,7 @@
                 
               
 
-              <time title="Created: 2019-05-17 10:59:15 / Modified: 11:41:43" itemprop="dateCreated datePublished" datetime="2019-05-17T10:59:15+08:00">2019-05-17</time>
+              <time title="Created: 2019-05-17 10:59:15 / Modified: 11:44:10" itemprop="dateCreated datePublished" datetime="2019-05-17T10:59:15+08:00">2019-05-17</time>
             
 
             
@@ -441,8 +441,8 @@
 <li>bypassSecurityTrustResourceUrl</li>
 </ul>
 <h1 id="http层面的攻击"><a href="#http层面的攻击" class="headerlink" title="http层面的攻击"></a>http层面的攻击</h1><h2 id="伪造跨站的请求CSRF或者XSRF"><a href="#伪造跨站的请求CSRF或者XSRF" class="headerlink" title="伪造跨站的请求CSRF或者XSRF"></a>伪造跨站的请求CSRF或者XSRF</h2><p>需要客户端和服务器端合作来阻止，好的方式是服务器随机产生token给客户端的cookies，每次客户端的请求都要携带token到后台去做验证，<br>如果token不存在或者不符合，就直接拒绝。</p>
-<h2 id="跨站脚本注入-XSSI"><a href="#跨站脚本注入-XSSI" class="headerlink" title="跨站脚本注入(XSSI)"></a>跨站脚本注入(XSSI)</h2><p>如果返回的JSON是可以当做javascript来执行的，就存在”<script>“注入的问题，好的方式就是使用字符串<br>“)]}’,\n”来阻止JSON自动执行。</p>
-</script></p>
+<h2 id="跨站脚本注入-XSSI"><a href="#跨站脚本注入-XSSI" class="headerlink" title="跨站脚本注入(XSSI)"></a>跨站脚本注入(XSSI)</h2><p>如果返回的JSON是可以当做javascript来执行的，就存在”script”注入的问题，好的方式就是使用字符串”)]}’,\n”来阻止JSON自动执行。</p>
+
           
         
       
