@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="前端 | 深圳史蒂芬库里">
 <meta property="og:description" content="angular的安全性了解angular的security(安全)政策可以帮助我们在开发的过程中避免引入一些不安全的因素为project留下安全的隐患，那么不安全的因素有哪些以及angular如何协助我们去避免这些问题呢？接下来给大家讲解几点：  XSS(cross-site scripting)页面攻击 http层面的攻击  阻止XSS(cross-site scripting)攻击攻击者注入脚">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-17T03:44:10.587Z">
+<meta property="og:updated_time" content="2019-05-17T03:46:55.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="angular的安全性">
 <meta name="twitter:description" content="angular的安全性了解angular的security(安全)政策可以帮助我们在开发的过程中避免引入一些不安全的因素为project留下安全的隐患，那么不安全的因素有哪些以及angular如何协助我们去避免这些问题呢？接下来给大家讲解几点：  XSS(cross-site scripting)页面攻击 http层面的攻击  阻止XSS(cross-site scripting)攻击攻击者注入脚">
@@ -367,7 +367,7 @@
                 
               
 
-              <time title="Created: 2019-05-17 10:59:15 / Modified: 11:44:10" itemprop="dateCreated datePublished" datetime="2019-05-17T10:59:15+08:00">2019-05-17</time>
+              <time title="Created: 2019-05-17 10:59:15 / Modified: 11:46:55" itemprop="dateCreated datePublished" datetime="2019-05-17T10:59:15+08:00">2019-05-17</time>
             
 
             
@@ -441,7 +441,6 @@
 <li>bypassSecurityTrustResourceUrl</li>
 </ul>
 <h1 id="http层面的攻击"><a href="#http层面的攻击" class="headerlink" title="http层面的攻击"></a>http层面的攻击</h1><h2 id="伪造跨站的请求CSRF或者XSRF"><a href="#伪造跨站的请求CSRF或者XSRF" class="headerlink" title="伪造跨站的请求CSRF或者XSRF"></a>伪造跨站的请求CSRF或者XSRF</h2><p>需要客户端和服务器端合作来阻止，好的方式是服务器随机产生token给客户端的cookies，每次客户端的请求都要携带token到后台去做验证，<br>如果token不存在或者不符合，就直接拒绝。</p>
-<h2 id="跨站脚本注入-XSSI"><a href="#跨站脚本注入-XSSI" class="headerlink" title="跨站脚本注入(XSSI)"></a>跨站脚本注入(XSSI)</h2><p>如果返回的JSON是可以当做javascript来执行的，就存在”script”注入的问题，好的方式就是使用字符串”)]}’,\n”来阻止JSON自动执行。</p>
 
       
     </div>
@@ -639,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#angular的安全性"><span class="nav-number">1.</span> <span class="nav-text">angular的安全性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#阻止XSS-cross-site-scripting-攻击"><span class="nav-number">2.</span> <span class="nav-text">阻止XSS(cross-site scripting)攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#直接使用DOM的api"><span class="nav-number">2.1.</span> <span class="nav-text">直接使用DOM的api</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSP-Content-Security-Policy"><span class="nav-number">2.2.</span> <span class="nav-text">CSP(Content Security Policy)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用离线的模板编译"><span class="nav-number">2.3.</span> <span class="nav-text">使用离线的模板编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器端的XSS保护"><span class="nav-number">2.4.</span> <span class="nav-text">服务器端的XSS保护</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信任安全的数据"><span class="nav-number">2.5.</span> <span class="nav-text">信任安全的数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#http层面的攻击"><span class="nav-number">3.</span> <span class="nav-text">http层面的攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#伪造跨站的请求CSRF或者XSRF"><span class="nav-number">3.1.</span> <span class="nav-text">伪造跨站的请求CSRF或者XSRF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨站脚本注入-XSSI"><span class="nav-number">3.2.</span> <span class="nav-text">跨站脚本注入(XSSI)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#angular的安全性"><span class="nav-number">1.</span> <span class="nav-text">angular的安全性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#阻止XSS-cross-site-scripting-攻击"><span class="nav-number">2.</span> <span class="nav-text">阻止XSS(cross-site scripting)攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#直接使用DOM的api"><span class="nav-number">2.1.</span> <span class="nav-text">直接使用DOM的api</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSP-Content-Security-Policy"><span class="nav-number">2.2.</span> <span class="nav-text">CSP(Content Security Policy)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用离线的模板编译"><span class="nav-number">2.3.</span> <span class="nav-text">使用离线的模板编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器端的XSS保护"><span class="nav-number">2.4.</span> <span class="nav-text">服务器端的XSS保护</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信任安全的数据"><span class="nav-number">2.5.</span> <span class="nav-text">信任安全的数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#http层面的攻击"><span class="nav-number">3.</span> <span class="nav-text">http层面的攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#伪造跨站的请求CSRF或者XSRF"><span class="nav-number">3.1.</span> <span class="nav-text">伪造跨站的请求CSRF或者XSRF</span></a></li></ol></li></ol></div>
             
 
           </div>
