@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="前端 | 深圳史蒂芬库里">
 <meta property="og:description" content="angular的安全性了解angular的security(安全)政策可以帮助我们在开发的过程中避免引入一些不安全的因素为project留下安全的隐患，那么不安全的因素有哪些以及angular如何协助我们去避免这些问题呢？接下来给大家讲解几点：  XSS(cross-site scripting)页面攻击 http层面的攻击  阻止XSS(cross-site scripting)攻击攻击者注入脚">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-17T03:37:25.281Z">
+<meta property="og:updated_time" content="2019-05-17T03:41:43.719Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="angular的安全性">
 <meta name="twitter:description" content="angular的安全性了解angular的security(安全)政策可以帮助我们在开发的过程中避免引入一些不安全的因素为project留下安全的隐患，那么不安全的因素有哪些以及angular如何协助我们去避免这些问题呢？接下来给大家讲解几点：  XSS(cross-site scripting)页面攻击 http层面的攻击  阻止XSS(cross-site scripting)攻击攻击者注入脚">
@@ -367,7 +367,7 @@
                 
               
 
-              <time title="Created: 2019-05-17 10:59:15 / Modified: 11:37:25" itemprop="dateCreated datePublished" datetime="2019-05-17T10:59:15+08:00">2019-05-17</time>
+              <time title="Created: 2019-05-17 10:59:15 / Modified: 11:41:43" itemprop="dateCreated datePublished" datetime="2019-05-17T10:59:15+08:00">2019-05-17</time>
             
 
             
@@ -430,8 +430,7 @@
 <li>http层面的攻击</li>
 </ul>
 <h1 id="阻止XSS-cross-site-scripting-攻击"><a href="#阻止XSS-cross-site-scripting-攻击" class="headerlink" title="阻止XSS(cross-site scripting)攻击"></a>阻止XSS(cross-site scripting)攻击</h1><p>攻击者注入脚本到web页面来窃取用户的数据，比如登录的用户名密码等等，对于这种攻击<br>我们的主要做法是阻止攻击者的数据进入到我们的DOM。<br>angular具备这样的安全模块<br>angular默认是不信任任何的值或者数据的，当一个来源于模板，属性，样式等的值插入到DOM，angular会做处理以及清除掉这些数据<br>angular的模板本身是完全受到信任的，所以要避免攻击者直接修改到模板的代码，主要手段就是使用<br>离线模板编译(<a href="https://angular.io/guide/security#offline-template-compiler" target="_blank" rel="noopener">https://angular.io/guide/security#offline-template-compiler</a>)</p>
-<p>##直接使用DOM的api</p>
-<p>不要使用第三方的api，没办法去保证里面的安全性</p>
+<h2 id="直接使用DOM的api"><a href="#直接使用DOM的api" class="headerlink" title="直接使用DOM的api"></a>直接使用DOM的api</h2><p>不要使用第三方的api，没办法去保证里面的安全性</p>
 <h2 id="CSP-Content-Security-Policy"><a href="#CSP-Content-Security-Policy" class="headerlink" title="CSP(Content Security Policy)"></a>CSP(Content Security Policy)</h2><p>非常有效的技术去阻止XSS攻击(<a href="http://www.html5rocks.com/en/tutorials/security/content-security-policy/" target="_blank" rel="noopener">http://www.html5rocks.com/en/tutorials/security/content-security-policy/</a>)</p>
 <h2 id="使用离线的模板编译"><a href="#使用离线的模板编译" class="headerlink" title="使用离线的模板编译"></a>使用离线的模板编译</h2><h2 id="服务器端的XSS保护"><a href="#服务器端的XSS保护" class="headerlink" title="服务器端的XSS保护"></a>服务器端的XSS保护</h2><h2 id="信任安全的数据"><a href="#信任安全的数据" class="headerlink" title="信任安全的数据"></a>信任安全的数据</h2><p>如果开发的过程中不得不加入某一个值，为了避免被angular自动给清理掉，可以自己先做好声明</p>
 <ul>
@@ -442,7 +441,7 @@
 <li>bypassSecurityTrustResourceUrl</li>
 </ul>
 <h1 id="http层面的攻击"><a href="#http层面的攻击" class="headerlink" title="http层面的攻击"></a>http层面的攻击</h1><h2 id="伪造跨站的请求CSRF或者XSRF"><a href="#伪造跨站的请求CSRF或者XSRF" class="headerlink" title="伪造跨站的请求CSRF或者XSRF"></a>伪造跨站的请求CSRF或者XSRF</h2><p>需要客户端和服务器端合作来阻止，好的方式是服务器随机产生token给客户端的cookies，每次客户端的请求都要携带token到后台去做验证，<br>如果token不存在或者不符合，就直接拒绝。</p>
-<h2 id="跨站脚本注入-XSSI"><a href="#跨站脚本注入-XSSI" class="headerlink" title="跨站脚本注入(XSSI)"></a>跨站脚本注入(XSSI)</h2><p>如果返回的JSON是可以当做javascript来执行的，就存在<script>注入的问题，好的方式就是使用字符串<br>“)]}’,\n”来阻止JSON自动执行。</p>
+<h2 id="跨站脚本注入-XSSI"><a href="#跨站脚本注入-XSSI" class="headerlink" title="跨站脚本注入(XSSI)"></a>跨站脚本注入(XSSI)</h2><p>如果返回的JSON是可以当做javascript来执行的，就存在”<script>“注入的问题，好的方式就是使用字符串<br>“)]}’,\n”来阻止JSON自动执行。</p>
 </script></p>
       
     </div>
@@ -640,7 +639,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#angular的安全性"><span class="nav-number">1.</span> <span class="nav-text">angular的安全性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#阻止XSS-cross-site-scripting-攻击"><span class="nav-number">2.</span> <span class="nav-text">阻止XSS(cross-site scripting)攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSP-Content-Security-Policy"><span class="nav-number">2.1.</span> <span class="nav-text">CSP(Content Security Policy)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用离线的模板编译"><span class="nav-number">2.2.</span> <span class="nav-text">使用离线的模板编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器端的XSS保护"><span class="nav-number">2.3.</span> <span class="nav-text">服务器端的XSS保护</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信任安全的数据"><span class="nav-number">2.4.</span> <span class="nav-text">信任安全的数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#http层面的攻击"><span class="nav-number">3.</span> <span class="nav-text">http层面的攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#伪造跨站的请求CSRF或者XSRF"><span class="nav-number">3.1.</span> <span class="nav-text">伪造跨站的请求CSRF或者XSRF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨站脚本注入-XSSI"><span class="nav-number">3.2.</span> <span class="nav-text">跨站脚本注入(XSSI)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#angular的安全性"><span class="nav-number">1.</span> <span class="nav-text">angular的安全性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#阻止XSS-cross-site-scripting-攻击"><span class="nav-number">2.</span> <span class="nav-text">阻止XSS(cross-site scripting)攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#直接使用DOM的api"><span class="nav-number">2.1.</span> <span class="nav-text">直接使用DOM的api</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSP-Content-Security-Policy"><span class="nav-number">2.2.</span> <span class="nav-text">CSP(Content Security Policy)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用离线的模板编译"><span class="nav-number">2.3.</span> <span class="nav-text">使用离线的模板编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器端的XSS保护"><span class="nav-number">2.4.</span> <span class="nav-text">服务器端的XSS保护</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信任安全的数据"><span class="nav-number">2.5.</span> <span class="nav-text">信任安全的数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#http层面的攻击"><span class="nav-number">3.</span> <span class="nav-text">http层面的攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#伪造跨站的请求CSRF或者XSRF"><span class="nav-number">3.1.</span> <span class="nav-text">伪造跨站的请求CSRF或者XSRF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨站脚本注入-XSSI"><span class="nav-number">3.2.</span> <span class="nav-text">跨站脚本注入(XSSI)</span></a></li></ol></li></ol></div>
             
 
           </div>
