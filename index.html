@@ -382,7 +382,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-20 16:19:17" itemprop="dateModified" datetime="2019-05-20T16:19:17+08:00">2019-05-20</time>
+                <time title="Modified: 2019-05-20 16:34:36" itemprop="dateModified" datetime="2019-05-20T16:34:36+08:00">2019-05-20</time>
               
             
           </span>
@@ -473,7 +473,39 @@
 <li>渲染应用</li>
 </ul>
 <p>aot将compile的过程放在应用部署前，所以浏览器端承载的工作量就会大幅度减少，相应的页面加载时间也会大幅度减少，这也就意味着更快更好的用户体验。</p>
-<h2 id="JIT-vs-AOT："><a href="#JIT-vs-AOT：" class="headerlink" title="JIT vs AOT："></a>JIT vs AOT：</h2><p>| 编译方式 | 编译时机   | 构建速度 | 打包大小 | 性能/渲染速度 | 模板错误检查时间 | 安全性<br>| JIT     | app运行时     | 快      | -        | -            | app运行时       | 低<br>| AOT     | app构建阶段 | 慢      | —        | 更快          | app构建阶段       | 高</p>
+<h2 id="JIT-vs-AOT："><a href="#JIT-vs-AOT：" class="headerlink" title="JIT vs AOT："></a>JIT vs AOT：</h2><table>
+<thead>
+<tr>
+<th>编译方式</th>
+<th>编译时机</th>
+<th>构建速度</th>
+<th>打包大小</th>
+<th>性能/渲染速度</th>
+<th>模板错误检查时间</th>
+<th>安全性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JIT</td>
+<td>app运行时</td>
+<td>快</td>
+<td>-</td>
+<td>-</td>
+<td>app运行时</td>
+<td>低 ———</td>
+</tr>
+<tr>
+<td>AOT</td>
+<td>app构建阶段</td>
+<td>慢</td>
+<td>—</td>
+<td>更快</td>
+<td>app构建阶段</td>
+<td>高 ————-</td>
+</tr>
+</tbody>
+</table>
 <p>AOT优势:</p>
 <ul>
 <li>渲染得更快<br>使用AOT，浏览器下载预编译版本的应用程序。 浏览器直接加载运行代码，所以它可以立即渲染该应用，而不用等应用完成首次编译，我们两个项目AOT加载速度相比JIT有3-5倍的提高</li>
