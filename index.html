@@ -382,7 +382,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-20 16:13:47" itemprop="dateModified" datetime="2019-05-20T16:13:47+08:00">2019-05-20</time>
+                <time title="Modified: 2019-05-20 16:19:17" itemprop="dateModified" datetime="2019-05-20T16:19:17+08:00">2019-05-20</time>
               
             
           </span>
@@ -473,7 +473,7 @@
 <li>渲染应用</li>
 </ul>
 <p>aot将compile的过程放在应用部署前，所以浏览器端承载的工作量就会大幅度减少，相应的页面加载时间也会大幅度减少，这也就意味着更快更好的用户体验。</p>
-<h2 id="JIT-vs-AOT："><a href="#JIT-vs-AOT：" class="headerlink" title="JIT vs AOT："></a>JIT vs AOT：</h2><p>|编译方式|编译时机   |构建速度|打包大小 |性能/渲染速度|模板错误检查时间|安全性<br>|JIT     |app运行时     |快      |-        |-            |app运行时       |低<br>|AOT     |app构建阶段|慢      |—        |更快          |app构建阶段       |高</p>
+<h2 id="JIT-vs-AOT："><a href="#JIT-vs-AOT：" class="headerlink" title="JIT vs AOT："></a>JIT vs AOT：</h2><p>| 编译方式 | 编译时机   | 构建速度 | 打包大小 | 性能/渲染速度 | 模板错误检查时间 | 安全性<br>| JIT     | app运行时     | 快      | -        | -            | app运行时       | 低<br>| AOT     | app构建阶段 | 慢      | —        | 更快          | app构建阶段       | 高</p>
 <p>AOT优势:</p>
 <ul>
 <li>渲染得更快<br>使用AOT，浏览器下载预编译版本的应用程序。 浏览器直接加载运行代码，所以它可以立即渲染该应用，而不用等应用完成首次编译，我们两个项目AOT加载速度相比JIT有3-5倍的提高</li>
@@ -482,8 +482,7 @@
 <li>提早检测模板错误<br>AOT编译器在构建过程中检测和报告模板绑定错误，避免用户遇到这些错误。</li>
 <li>更安全<br>AOT编译远在HTML模版和组件被服务到客户端之前，将它们编译到JavaScript文件。没有模版可以阅读，没有高风险客户端HTML或JavaScript可利用，所以注入攻击的机会较少</li>
 </ul>
-<p>JIT优势：<br>编译时间短，除非确实有动态组件的需求，否则jit唯一的优势就是能用来做在线 Demo和开发调试，参考知乎答案</p>
-<p>参考链接<br><a href="https://www.jianshu.com/p/ef895e705d58" target="_blank" rel="noopener">https://www.jianshu.com/p/ef895e705d58</a></p>
+<p>JIT优势：<br>编译时间短，除非确实有动态组件的需求，否则jit唯一的优势就是能用来做在线 Demo和开发调试</p>
 
           
         
