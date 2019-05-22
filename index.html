@@ -320,6 +320,200 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/构建微服务：Spring-boot-入门篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="超哥">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端 | 深圳史蒂芬库里">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/22/构建微服务：Spring-boot-入门篇/" class="post-title-link" itemprop="url">构建微服务：Spring boot 入门篇</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-22 16:02:38 / Modified: 16:25:33" itemprop="dateCreated datePublished" datetime="2019-05-22T16:02:38+08:00">2019-05-22</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/web前端/" itemprop="url" rel="index"><span itemprop="name">web前端</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Spring Boot 是由 Pivotal 团队提供的全新框架，其设计目的是用来简化新 Spring 应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。用我的话来理解，就是 Spring Boot 其实不是什么新的框架，它默认配置了很多框架的使用方式，就像 Maven 整合了所有的 Jar 包，Spring Boot 整合了所有的框架。</p>
+<h2 id="使用Spring-Boot-有什么好处"><a href="#使用Spring-Boot-有什么好处" class="headerlink" title="使用Spring Boot 有什么好处"></a>使用Spring Boot 有什么好处</h2><p>其实就是简单、快速、方便！平时如果我们需要搭建一个 Spring Web 项目的时候需要怎么做呢？</p>
+<ul>
+<li>1）配置 web.xml，加载 Spring 和 Spring mvc</li>
+<li>2）配置数据库连接、配置 Spring 事务</li>
+<li>3）配置加载配置文件的读取，开启注解</li>
+<li>4）配置日志文件</li>
+<li>…</li>
+<li>配置完成之后部署 Tomcat 调试</li>
+<li>…<br>现在非常流行微服务，如果我这个项目仅仅只是需要发送一个邮件，如果我的项目仅仅是生产一个积分；我都需要这样折腾一遍!</li>
+</ul>
+<p>但是如果使用 Spring Boot 呢？<br>很简单，我仅仅只需要非常少的几个配置就可以迅速方便的搭建起来一套 Web 项目或者是构建一个微服务！</p>
+<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>说一千道一万，说的容易做起来难，不扯别的，动手做一个<br>1、访问 <a href="http://start.spring.io/" target="_blank" rel="noopener">http://start.spring.io/</a><br>2、选择构建工具 Maven Project、Java、Spring Boot 版本 2.1.3 以及一些工程基本信息，可参考下图所示：<br><img src="http://www.itmind.net/assets/images/2019/springboot/spring-boot-start.png" alt><br>3、点击 Generate Project 下载项目压缩包<br>4、解压后，使用 Idea 导入项目，File -&gt; New -&gt; Model from Existing Source.. -&gt; 选择解压后的文件夹 -&gt; OK，选择 Maven 一路 Next，OK done!<br>5、如果使用的是 Eclipse，Import -&gt; Existing Maven Projects -&gt; Next -&gt; 选择解压后的文件夹 -&gt; Finsh，OK done!</p>
+<h2 id="Idea-构建项目"><a href="#Idea-构建项目" class="headerlink" title="Idea 构建项目"></a>Idea 构建项目</h2><p>1、选择 File -&gt; New —&gt; Project… 弹出新建项目的框<br>2、选择 Spring Initializr，Next 也会出现上述类似的配置界面，Idea 帮我们做了集成<br>3、填写相关内容后，点击 Next 选择依赖的包再点击 Next，最后确定信息无误点击 Finish。</p>
+<p><em>项目结构介绍</em></p>
+<p><img src="https://images2015.cnblogs.com/blog/331425/201607/331425-20160712105138029-1564953731.png" alt></p>
+<p>如上图所示，Spring Boot的基础结构共三个文件:</p>
+<ul>
+<li><p>src/main/java  程序开发以及主程序入口</p>
+</li>
+<li><p>src/main/resources 配置文件</p>
+</li>
+<li><p>src/test/java  测试程序</p>
+</li>
+</ul>
+<p>另外，spingboot建议的目录结果如下：</p>
+<p>root package结构：com.example.myproject</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">com</span><br><span class="line">  +- example</span><br><span class="line">    +- myproject</span><br><span class="line">      +- Application.java</span><br><span class="line">      |</span><br><span class="line">      +- domain</span><br><span class="line">      |  +- Customer.java</span><br><span class="line">      |  +- CustomerRepository.java</span><br><span class="line">      |</span><br><span class="line">      +- service</span><br><span class="line">      |  +- CustomerService.java</span><br><span class="line">      |</span><br><span class="line">      +- controller</span><br><span class="line">      |  +- CustomerController.java</span><br><span class="line">      |</span><br></pre></td></tr></table></figure>
+<p>1、Application.java 建议放到跟目录下面,主要用于做一些框架配置</p>
+<p>2、domain目录主要用于实体（Entity）与数据访问层（Repository）</p>
+<p>3、service 层主要是业务类代码</p>
+<p>4、controller 负责页面访问控制</p>
+<p>采用默认配置可以省去很多配置，当然也可以根据自己的喜欢来进行更改</p>
+<p><em>最后，启动Application main方法，至此一个java项目搭建好了！</em></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/互联网之子-AARON-SWARTZ/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1994,185 +2188,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/angulard的生命周期钩子/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="超哥">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端 | 深圳史蒂芬库里">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/16/angulard的生命周期钩子/" class="post-title-link" itemprop="url">angular的生命周期钩子</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-16 11:09:21 / Modified: 16:51:14" itemprop="dateCreated datePublished" datetime="2019-05-16T11:09:21+08:00">2019-05-16</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/web前端/" itemprop="url" rel="index"><span itemprop="name">web前端</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="angular的生命周期钩子-hooks"><a href="#angular的生命周期钩子-hooks" class="headerlink" title="angular的生命周期钩子(hooks)"></a>angular的生命周期钩子(hooks)</h1><p>因为种种原因公司在angular 1.x的版本上面连续地做了几个项目，因为这个版本有很多的不足的地方，包括后期的维护很复杂，所以后面的项目大佬们在<br>考虑用其它的框架平台，考虑到延续性和集团审批方面的因素，非常有可能使用angular的最新版本，当然angular不完全是版本的迭代以及向前兼容，<br>angular 2.x 以上的版本采用的是typescript的语法，整个的核心概念已经完全不一样了，完全是另外一门语言需要重新学习，<br>接下来关于angular的博文主要是记录我的学习过程里面遇到的一些有趣的知识点来和大家分享。</p>
-<h2 id="什么是生命周期钩子"><a href="#什么是生命周期钩子" class="headerlink" title="什么是生命周期钩子"></a>什么是生命周期钩子</h2><p>简单点来说生命周期钩子就是Angular中一个组件从被创建当销毁期间的一些有意义的关键时刻.<br>这些关键时刻在Angular中被Angular核心模块 @angular/core 暴露出来,<br>从而赋予了我们在它们发生时采取行动的能力</p>
-<p>指令和组件的实例有一个生命周期：新建、更新和销毁。</p>
-<p>每个接口都有唯一的一个钩子方法，它们的名字是由接口名加上 ng前缀构成的。比如，OnInit接口的钩子方法叫做ngOnInit</p>
-<h2 id="生命周期顺序简写"><a href="#生命周期顺序简写" class="headerlink" title="生命周期顺序简写"></a>生命周期顺序简写</h2><p>在Angular通过构造函数创建组件/指令时，它调用这些生命周期钩子方法的顺序是：</p>
-<ul>
-<li>ngOnChanges：在ngOnInit之前，当数据绑定输入属性的值发生变化时。</li>
-<li>ngOnInit：在第一次ngOnChanges之后。</li>
-<li>ngDoCheck：每次Angular变化检测时。</li>
-<li>ngAfterContentInit：在外部内容放到组件内之后。</li>
-<li>ngAfterContentChecked：在放到组件内的外部内容每次检查之后。</li>
-<li>ngAfterViewInit：在初始化组件视图和子视图之后。</li>
-<li>ngAfterViewChecked：在妹子组件视图和子视图检查之后。</li>
-<li>ngOnDestroy：在Angular销毁组件/指令之前。</li>
-</ul>
-<p>除此之外，一些组件还提供了自己的生命周期钩子。例如router有routerOnActivate</p>
-<h2 id="组件的生命周期"><a href="#组件的生命周期" class="headerlink" title="组件的生命周期"></a>组件的生命周期</h2><p>如下图：红色部分钩子angular只会触发一次，而绿色钩子会触发多次。<br>一般情况下，如果要实现check钩子，代码一定要非常简洁，和非常轻量级，不然，分分钟内存泄露。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/6630265-f869d0ab88b4c59c.png" alt></p>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>一些有用的链接：<br><a href="https://angular.cn/guide/lifecycle-hooks" target="_blank" rel="noopener">https://angular.cn/guide/lifecycle-hooks</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2219,7 +2234,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2271,7 +2286,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
