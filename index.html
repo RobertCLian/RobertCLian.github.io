@@ -340,7 +340,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/23/我的开发环境-GIT/" class="post-title-link" itemprop="url">我的开发环境|GIT</a>
+                <a href="/2019/05/23/我的开发环境-GIT/" class="post-title-link" itemprop="url">我的开发环境 | GIT</a>
               
             
           </h1>
@@ -365,7 +365,7 @@
                 
               
 
-              <time title="Created: 2019-05-23 15:37:47 / Modified: 15:50:08" itemprop="dateCreated datePublished" datetime="2019-05-23T15:37:47+08:00">2019-05-23</time>
+              <time title="Created: 2019-05-23 15:37:47 / Modified: 16:30:28" itemprop="dateCreated datePublished" datetime="2019-05-23T15:37:47+08:00">2019-05-23</time>
             
 
             
@@ -424,7 +424,29 @@
       
         
           
-            <p><img src="/2019/05/23/我的开发环境-GIT/Git-01.jpg" alt></p>
+            <p>团队开发在代码的管理上面，不同公司可能有不同的一些方案，我们公司现在使用的比较流行的GIT来管理。</p>
+<p>使用GIT的童鞋或多或少遇到了一些苦恼的问题，有时也浪费时间，我想分享一下我的git的一些使用心得。</p>
+<ol>
+<li>考虑到代码分析与合并可能带来的问题，我们并不是直接在local repository直接修改代码，而是另外拷贝一份import到eclipse， 如下图</li>
+</ol>
+<p><img src="/2019/05/23/我的开发环境-GIT/Git-01.JPG" alt></p>
+<p>可以看到我们多了一个代码compare的动作，这样做有几个好处：</p>
+<ol>
+<li>使用WinMerge软件可以很直观地看到修改的代码的部分，提交之前可以自己做一次code review。</li>
+<li>可以极大的避免提交不必的代码到Remote从而引起编译错误或其它问题。</li>
+<li>提交代码冲突local被覆盖的时候，新的修改在eclipse的folder还在。</li>
+</ol>
+<h2 id="GIT常用到的几个命令"><a href="#GIT常用到的几个命令" class="headerlink" title="GIT常用到的几个命令"></a>GIT常用到的几个命令</h2><p><em>1. 拿远程某个分支的更新</em><br><code>git pull</code></p>
+<p><em>1. 拿远程某个分支的更新并保留本地的修改</em><br><code>git pull --rebase</code></p>
+<p><em>3. 查看GIT的日志</em><br><code>git log</code></p>
+<p><em>4. 查看GIT的修改状态</em><br><code>git status</code></p>
+<p><em>5. 添加所有修改的文件</em><br><code>git add *</code></p>
+<p><em>6. 添加要修改的文件</em><br><code>git add *</code></p>
+<p><em>7. 提交的comment</em><br><code>git commit -m &quot;your comment&quot;</code></p>
+<p><em>8. 修改commit但是还没有push的comment</em><br><code>git commit --amend</code></p>
+<p><em>9. 把本地的修改提交到remote branch</em><br><code>git push</code></p>
+<p><em>10. 比较文件的修改部分</em><br><code>git diff &lt;file&gt;</code></p>
+<p><em>11. 恢复GIT到之前的某个版本</em><br><code>git reset --hard &lt;commit&gt;</code></p>
 
           
         
