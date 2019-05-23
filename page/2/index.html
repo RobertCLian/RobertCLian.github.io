@@ -320,6 +320,183 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/17/angular的安全性/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="超哥">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端 | 深圳史蒂芬库里">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/17/angular的安全性/" class="post-title-link" itemprop="url">angular的安全性</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-17 10:59:15 / Modified: 11:46:55" itemprop="dateCreated datePublished" datetime="2019-05-17T10:59:15+08:00">2019-05-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/web前端/" itemprop="url" rel="index"><span itemprop="name">web前端</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="angular的安全性"><a href="#angular的安全性" class="headerlink" title="angular的安全性"></a>angular的安全性</h1><p>了解angular的security(安全)政策可以帮助我们在开发的过程中避免引入一些不安全的因素为project留下安全的隐患，<br>那么不安全的因素有哪些以及angular如何协助我们去避免这些问题呢？接下来给大家讲解几点：</p>
+<ul>
+<li>XSS(cross-site scripting)页面攻击</li>
+<li>http层面的攻击</li>
+</ul>
+<h1 id="阻止XSS-cross-site-scripting-攻击"><a href="#阻止XSS-cross-site-scripting-攻击" class="headerlink" title="阻止XSS(cross-site scripting)攻击"></a>阻止XSS(cross-site scripting)攻击</h1><p>攻击者注入脚本到web页面来窃取用户的数据，比如登录的用户名密码等等，对于这种攻击<br>我们的主要做法是阻止攻击者的数据进入到我们的DOM。<br>angular具备这样的安全模块<br>angular默认是不信任任何的值或者数据的，当一个来源于模板，属性，样式等的值插入到DOM，angular会做处理以及清除掉这些数据<br>angular的模板本身是完全受到信任的，所以要避免攻击者直接修改到模板的代码，主要手段就是使用<br>离线模板编译(<a href="https://angular.io/guide/security#offline-template-compiler" target="_blank" rel="noopener">https://angular.io/guide/security#offline-template-compiler</a>)</p>
+<h2 id="直接使用DOM的api"><a href="#直接使用DOM的api" class="headerlink" title="直接使用DOM的api"></a>直接使用DOM的api</h2><p>不要使用第三方的api，没办法去保证里面的安全性</p>
+<h2 id="CSP-Content-Security-Policy"><a href="#CSP-Content-Security-Policy" class="headerlink" title="CSP(Content Security Policy)"></a>CSP(Content Security Policy)</h2><p>非常有效的技术去阻止XSS攻击(<a href="http://www.html5rocks.com/en/tutorials/security/content-security-policy/" target="_blank" rel="noopener">http://www.html5rocks.com/en/tutorials/security/content-security-policy/</a>)</p>
+<h2 id="使用离线的模板编译"><a href="#使用离线的模板编译" class="headerlink" title="使用离线的模板编译"></a>使用离线的模板编译</h2><h2 id="服务器端的XSS保护"><a href="#服务器端的XSS保护" class="headerlink" title="服务器端的XSS保护"></a>服务器端的XSS保护</h2><h2 id="信任安全的数据"><a href="#信任安全的数据" class="headerlink" title="信任安全的数据"></a>信任安全的数据</h2><p>如果开发的过程中不得不加入某一个值，为了避免被angular自动给清理掉，可以自己先做好声明</p>
+<ul>
+<li>bypassSecurityTrustHtml</li>
+<li>bypassSecurityTrustScript</li>
+<li>bypassSecurityTrustStyle</li>
+<li>bypassSecurityTrustUrl</li>
+<li>bypassSecurityTrustResourceUrl</li>
+</ul>
+<h1 id="http层面的攻击"><a href="#http层面的攻击" class="headerlink" title="http层面的攻击"></a>http层面的攻击</h1><h2 id="伪造跨站的请求CSRF或者XSRF"><a href="#伪造跨站的请求CSRF或者XSRF" class="headerlink" title="伪造跨站的请求CSRF或者XSRF"></a>伪造跨站的请求CSRF或者XSRF</h2><p>需要客户端和服务器端合作来阻止，好的方式是服务器随机产生token给客户端的cookies，每次客户端的请求都要携带token到后台去做验证，<br>如果token不存在或者不符合，就直接拒绝。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/17/angulard的事件发射器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1660,7 +1837,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
